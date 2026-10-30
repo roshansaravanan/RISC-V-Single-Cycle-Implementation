@@ -22,11 +22,7 @@ module alu (
     output logic [31:0] result,   // the answer
     output logic         zero      // 1 if result == 0 - used later for branch decisions
 );
- // 'zero' flag: many CPUs derive branch decisions from whether
-    // a subtraction result is zero (a == b  <=>  a - b == 0).
-    // We compute it generically here so the control/branch logic
-    // built later can just look at this wire instead of redoing
-    // the comparison itself.
+ 
     assign zero = (result == 32'b0);
  
 endmodule
